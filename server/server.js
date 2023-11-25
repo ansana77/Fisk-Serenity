@@ -7,6 +7,7 @@ import { handleError, AppError } from './utils/errorUtils.js';
 import userRouter from './routes/userRouter.js';
 import postRouter from './routes/postRouter.js';
 import commentRouter from './routes/commentRouter.js';
+import appointmentRouter from './routes/appointmentRouter.js';
 
 // Middleware setup
 dotenv.config();
@@ -24,6 +25,7 @@ console.log(MONGODB_URI);
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/posts', postRouter);
 app.use('/api/v1/comments', commentRouter);
+app.use('/api/v1/appointments', appointmentRouter);
 app.use('*', () => {
   throw new AppError('Route not found', 404);
 });

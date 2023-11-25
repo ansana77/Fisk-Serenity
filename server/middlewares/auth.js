@@ -22,7 +22,6 @@ const isAuthenticated = asyncHandler(async (req, res, next) => {
     async (err, decodedData) => {
       if (err) {
         next(new AppError('Invalid token', 401));
-        console.log('here!');
       } else {
         req.user = await User.findById(decodedData.id);
         next();

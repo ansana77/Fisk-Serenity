@@ -6,6 +6,7 @@ import PostComponent from './PostComponent';
 const Forum = () => {
   const [posts, setPosts] = useState([]);
   const [isBusy, setIsBusy] = useState(true);
+  const [refresh, setRefresh] = useState(false);
 
   useEffect(() => {
     axios

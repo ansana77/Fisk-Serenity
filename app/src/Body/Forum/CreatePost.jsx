@@ -9,7 +9,6 @@ const CreatePost = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const post = { title, body };
-    console.log(post);
     axios
       .post('/posts', post)
       .then((res) => {
@@ -19,6 +18,8 @@ const CreatePost = () => {
             text: 'Your post has been created',
             icon: 'success',
             confirmButtonText: 'Cool',
+          }).then(() => {
+            window.location.reload();
           });
         } else {
           console.log(res.data);

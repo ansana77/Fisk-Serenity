@@ -10,9 +10,14 @@ const isFiskEmail = (email) => {
 const getUser = asyncHandler(async (req, res, next) => {
   const user = await User.findById(req.user._id)
     .select('-password -email')
-    .populate('posts');
-  console.log('here');
-  console.log(user);
+    .populate('posts')
+    .populate({
+      path: 'appointments',
+      populate: {
+        path: 'counselor',
+        select: 'username',
+      },
+    });
   if (!user) {
     return next(new AppError('User not found', 404));
   }

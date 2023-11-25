@@ -8,6 +8,7 @@ import jwt_decode from 'jwt-decode';
 import Logout from './Logout';
 import Protected from './Protected';
 import Forum from './Forum/Forum';
+import StudentAppointments from './Appointments/StudentAppointments';
 
 const Body = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -41,15 +42,16 @@ const Body = () => {
               </Protected>
             }
           />
-          {/* 
+
           <Route
-            path="/recycle/:id"
+            path="/appointments"
             element={
               <Protected isLoggedIn={isLoggedIn} isBusy={isBusy}>
-                <Recycle />
+                <StudentAppointments />
               </Protected>
             }
           />
+          {/* 
           <Route
             path="/profile"
             element={

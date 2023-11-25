@@ -26,7 +26,7 @@ const LandingPage = () => {
           Your path to mental wellness
         </p>
         <div className="flex flex-row mt-5">
-          <Link to={isLoggedIn ? '/recycle' : '/login'}>
+          <Link to={isLoggedIn ? '/appointments' : '/login'}>
             <button className="bg-serenity-pink text-white font-bold py-2 px-4 rounded mr-5">
               Get Started
             </button>
